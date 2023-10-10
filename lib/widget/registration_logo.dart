@@ -10,8 +10,8 @@ class RegistrationLogoWidget extends StatelessWidget {
     return Container(
       color: Colors.white,
       child: Container(
-        height: 150,
-        width: 400,
+        //height: 150,
+        width: MediaQuery.of(context).size.width,
         decoration: BoxDecoration(
             color: Theme.of(context).primaryColor,
             borderRadius: const BorderRadius.only(
@@ -21,7 +21,7 @@ class RegistrationLogoWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             const Padding(
-              padding: EdgeInsets.only(top: 30.0),
+              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 70),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,

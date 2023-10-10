@@ -1,5 +1,7 @@
 enum Gender {
+  // ignore: constant_identifier_names
   Male,
+  // ignore: constant_identifier_names
   Female,
 }
 

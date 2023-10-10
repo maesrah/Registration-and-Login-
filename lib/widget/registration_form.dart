@@ -131,7 +131,7 @@ class _RegistrationFormState extends State<RegistrationForm> {
             padding: const EdgeInsets.all(8.0),
             child: DropdownButton(
                 hint: const Text('Select Country'),
-                dropdownColor: const Color.fromARGB(255, 110, 65, 118),
+                dropdownColor: Theme.of(context).primaryColor,
                 iconSize: 36,
                 isExpanded: true,
                 value: _selectedCountry,
@@ -260,44 +260,43 @@ class _RegistrationFormState extends State<RegistrationForm> {
                   ),
                 ),
               )),
-          SizedBox(
-            width: 250, // Expand width to fill the parent's width
-            height: 50,
-            child: TextButton(
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all<OutlinedBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10.0),
-                    ),
+          TextButton(
+              style: ButtonStyle(
+                shape: MaterialStateProperty.all<OutlinedBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(10.0),
                   ),
-                  backgroundColor: MaterialStateProperty.all<Color>(
-                      const Color.fromARGB(255, 110, 65, 118)),
                 ),
-                onPressed: () {
-                  setState(() {
-                    if (_formkey.currentState!.validate()) {
-                      //the form is validate, check the radioButton
-                      if (gender == null) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text("Please select your gender!"),
-                          ),
-                        );
-                      } else {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                            content: Text("Successfuly Registered!"),
-                          ),
-                        );
-                      }
+                backgroundColor: MaterialStateProperty.all<Color>(
+                    Theme.of(context).primaryColor),
+              ),
+              onPressed: () {
+                setState(() {
+                  if (_formkey.currentState!.validate()) {
+                    //the form is validate, check the radioButton
+                    if (gender == null) {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text("Please select your gender!"),
+                        ),
+                      );
+                    } else {
+                      ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text("Successfuly Registered!"),
+                        ),
+                      );
                     }
-                  });
-                },
-                child: const Text(
+                  }
+                });
+              },
+              child: const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 50, vertical: 8),
+                child: Text(
                   'Register',
                   style: TextStyle(color: Colors.white, fontSize: 16),
-                )),
-          ),
+                ),
+              )),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

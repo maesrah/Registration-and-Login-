@@ -21,7 +21,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
     sncakbar for clickable terms and condition
     */
     return Scaffold(
-      appBar: AppBar(backgroundColor: Theme.of(context).primaryColor),
+      //appBar: AppBar(backgroundColor: Theme.of(context).primaryColor),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Column(
@@ -33,11 +33,11 @@ class _RegistrationPageState extends State<RegistrationPage> {
             //Second Container
             Container(
               color: Theme.of(context).primaryColor,
-              height: 1000,
-              width: 400,
+              //height: double.infinity,
+              width: MediaQuery.of(context).size.width,
               child: Container(
-                height: MediaQuery.of(context).size.height - 270,
-                width: 390,
+                //height: double.infinity,
+                width: MediaQuery.of(context).size.width,
                 decoration: const BoxDecoration(
                     color: Colors.white,
                     borderRadius:
